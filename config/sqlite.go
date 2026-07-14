@@ -33,7 +33,7 @@ func InitializeSqlite() (*gorm.DB, error) {
 	}
 
 	// Create and initialize the database
-	db, err := gorm.Open(sqlite.Open(dbPath), &gorm.Config{})
+	db, err = gorm.Open(sqlite.Open(dbPath), &gorm.Config{})
 	if err != nil {
 		logger.Errorf("sqlite database error: %v", err)
 		return nil, err
