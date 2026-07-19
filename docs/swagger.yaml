@@ -206,4 +206,23 @@ paths:
       summary: Update opening
       tags:
       - Openings
+  /openings:
+    get:
+      consumes:
+      - application/json
+      description: List job openings
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListOpeningsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: List openings
+      tags:
+      - Openings
 swagger: "2.0"
