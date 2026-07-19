@@ -209,6 +209,20 @@ const docTemplate = `{
                 }
             }
         },
+        "handler.ListOpeningsResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/schemas.OpeningResponse"
+                    }
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
         "handler.ShowOpeningByIdResponse": {
             "type": "object",
             "properties": {
