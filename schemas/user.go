@@ -8,11 +8,9 @@ import (
 
 type User struct {
 	gorm.Model
-	Nome    string
-	Email   string
-	Senha   string
-	admin   bool
-	adminId string
+	Nome  string
+	Email string
+	Senha string
 }
 
 type UserResponse struct {
@@ -23,6 +21,4 @@ type UserResponse struct {
 	Nome      string    `json:"nome"`
 	Email     string    `json:"email"`
 	Senha     string    `json:"senha"`
-	Admin     bool      `json:"admin"`
-	AdminId   string    `json:"adminId"`
 }
