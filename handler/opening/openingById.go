@@ -26,7 +26,7 @@ func OpeningByIdHandler(ctx *gin.Context) {
 
 	id := ctx.Query("id")
 	if id == "" {
-		sendError(ctx, http.StatusBadRequest, errParamIsRequired("id", "string").Error())
+		handler.SendError(ctx, http.StatusBadRequest, handler.ErrParamIsRequired("id", "string").Error())
 		return
 	}
 
@@ -35,9 +35,9 @@ func OpeningByIdHandler(ctx *gin.Context) {
 	// Find opening
 	if err := db.First(&opening, &id).Error; err != nil {
 		logger.Errorf("error finding opening %v", err.Error())
-		sendError(ctx, http.StatusNotFound, fmt.Sprintf("opening not found with id %s", id))
+		handler.SendError(ctx, http.StatusNotFound, fmt.Sprintf("opening not found with id %s", id))
 		return
 	}
 
-	sendSuccess(ctx, "show-by-id-opening", opening)
+	handler.SendSuccess(ctx, "show-by-id-opening", opening)
 }
