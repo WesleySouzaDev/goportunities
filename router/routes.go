@@ -2,6 +2,7 @@ package router
 
 import (
 	"goportunities/handler"
+	"goportunities/handler/opening"
 
 	"github.com/gin-gonic/gin"
 
@@ -19,11 +20,13 @@ func InitializerRouter(router *gin.Engine) {
 	docs.SwaggerInfo.BasePath = basePath
 	v1 := router.Group(basePath)
 	{
-		v1.GET("/openings", handler.ListOpeningsHandler)
-		v1.GET("/opening", handler.OpeningByIdHandler)
-		v1.POST("/opening", handler.CreateOpeningHandler)
-		v1.PUT("/opening", handler.UpdateOpeningHandler)
-		v1.DELETE("/opening", handler.DeleteOpeningHandler)
+		// Openings
+		v1.GET("/openings", opening.ListOpeningsHandler)
+		v1.GET("/opening", opening.OpeningByIdHandler)
+		v1.POST("/opening", opening.CreateOpeningHandler)
+		v1.PUT("/opening", opening.UpdateOpeningHandler)
+		v1.DELETE("/opening", opening.DeleteOpeningHandler)
+
 	}
 
 	// Initialize swagger

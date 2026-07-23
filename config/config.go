@@ -10,7 +10,12 @@ var (
 )
 
 func Init() error {
+	// Load environment variables
+	LoadEnv()
+
+	// Initialize database
 	_, err := InitializeSqlite()
+
 	if err != nil {
 		return err
 	}

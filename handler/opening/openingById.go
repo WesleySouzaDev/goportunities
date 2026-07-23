@@ -1,7 +1,8 @@
-package handler
+package opening
 
 import (
 	"fmt"
+	"goportunities/handler"
 	"goportunities/schemas"
 	"net/http"
 
@@ -21,6 +22,8 @@ import (
 // @Failure 404 {object} ErrorResponse
 // @Router /opening [get]
 func OpeningByIdHandler(ctx *gin.Context) {
+	db, logger := handler.InitializeHandler()
+
 	id := ctx.Query("id")
 	if id == "" {
 		sendError(ctx, http.StatusBadRequest, errParamIsRequired("id", "string").Error())

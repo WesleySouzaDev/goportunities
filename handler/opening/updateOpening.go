@@ -1,9 +1,11 @@
-package handler
+package opening
 
 import (
+	"goportunities/handler"
 	"goportunities/schemas"
 	"net/http"
 
+	"github.com/bytedance/gopkg/util/logger"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,6 +23,7 @@ import (
 // @Failure 500 {object} ErrorResponse
 // @Router /opening [put]
 func UpdateOpeningHandler(ctx *gin.Context) {
+	db, _ := handler.InitializeHandler()
 	request := UpdateOpeningRequest{}
 
 	ctx.BindJSON(&request)

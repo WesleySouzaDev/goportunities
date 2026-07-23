@@ -41,19 +41,19 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.ShowOpeningByIdResponse"
+                            "$ref": "#/definitions/opening.ShowOpeningByIdResponse"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     }
                 }
@@ -83,25 +83,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.UpdateOpeningResponse"
+                            "$ref": "#/definitions/opening.UpdateOpeningResponse"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     }
                 }
@@ -125,7 +125,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/handler.CreateOpeningRequest"
+                            "$ref": "#/definitions/opening.CreateOpeningRequest"
                         }
                     }
                 ],
@@ -133,19 +133,19 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.CreateOpeningResponse"
+                            "$ref": "#/definitions/opening.CreateOpeningResponse"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     }
                 }
@@ -175,25 +175,25 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.DeleteOpeningResponse"
+                            "$ref": "#/definitions/opening.DeleteOpeningResponse"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     },
                     "404": {
                         "description": "Not Found",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     },
                     "500": {
                         "description": "Internal Server Error",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     }
                 }
@@ -216,13 +216,13 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/handler.ListOpeningsResponse"
+                            "$ref": "#/definitions/opening.ListOpeningsResponse"
                         }
                     },
                     "400": {
                         "description": "Bad Request",
                         "schema": {
-                            "$ref": "#/definitions/handler.ErrorResponse"
+                            "$ref": "#/definitions/opening.ErrorResponse"
                         }
                     }
                 }
@@ -230,7 +230,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "handler.CreateOpeningRequest": {
+        "opening.CreateOpeningRequest": {
             "type": "object",
             "properties": {
                 "company": {
@@ -253,7 +253,7 @@ const docTemplate = `{
                 }
             }
         },
-        "handler.CreateOpeningResponse": {
+        "opening.CreateOpeningResponse": {
             "type": "object",
             "properties": {
                 "data": {
@@ -264,7 +264,7 @@ const docTemplate = `{
                 }
             }
         },
-        "handler.DeleteOpeningResponse": {
+        "opening.DeleteOpeningResponse": {
             "type": "object",
             "properties": {
                 "data": {
@@ -275,7 +275,7 @@ const docTemplate = `{
                 }
             }
         },
-        "handler.ErrorResponse": {
+        "opening.ErrorResponse": {
             "type": "object",
             "properties": {
                 "code": {
@@ -286,7 +286,7 @@ const docTemplate = `{
                 }
             }
         },
-        "handler.ListOpeningsResponse": {
+        "opening.ListOpeningsResponse": {
             "type": "object",
             "properties": {
                 "data": {
@@ -300,7 +300,7 @@ const docTemplate = `{
                 }
             }
         },
-        "handler.ShowOpeningByIdResponse": {
+        "opening.ShowOpeningByIdResponse": {
             "type": "object",
             "properties": {
                 "data": {
@@ -311,7 +311,7 @@ const docTemplate = `{
                 }
             }
         },
-        "handler.UpdateOpeningResponse": {
+        "opening.UpdateOpeningResponse": {
             "type": "object",
             "properties": {
                 "data": {

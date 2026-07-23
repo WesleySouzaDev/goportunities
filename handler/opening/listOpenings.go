@@ -1,6 +1,7 @@
-package handler
+package opening
 
 import (
+	"goportunities/handler"
 	"goportunities/schemas"
 	"net/http"
 
@@ -18,6 +19,7 @@ import (
 // @Failure 400 {object} ErrorResponse
 // @Router /openings [get]
 func ListOpeningsHandler(ctx *gin.Context) {
+	db, _ := handler.InitializeHandler()
 
 	openings := []schemas.Opening{}
 

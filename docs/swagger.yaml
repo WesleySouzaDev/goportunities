@@ -1,5 +1,5 @@
 definitions:
-  handler.CreateOpeningRequest:
+  opening.CreateOpeningRequest:
     properties:
       company:
         type: string
@@ -14,28 +14,28 @@ definitions:
       salary:
         type: integer
     type: object
-  handler.CreateOpeningResponse:
+  opening.CreateOpeningResponse:
     properties:
       data:
         $ref: '#/definitions/schemas.OpeningResponse'
       message:
         type: string
     type: object
-  handler.DeleteOpeningResponse:
+  opening.DeleteOpeningResponse:
     properties:
       data:
         $ref: '#/definitions/schemas.OpeningResponse'
       message:
         type: string
     type: object
-  handler.ErrorResponse:
+  opening.ErrorResponse:
     properties:
       code:
         type: integer
       message:
         type: string
     type: object
-  handler.ListOpeningsResponse:
+  opening.ListOpeningsResponse:
     properties:
       data:
         items:
@@ -44,14 +44,14 @@ definitions:
       message:
         type: string
     type: object
-  handler.ShowOpeningByIdResponse:
+  opening.ShowOpeningByIdResponse:
     properties:
       data:
         $ref: '#/definitions/schemas.OpeningResponse'
       message:
         type: string
     type: object
-  handler.UpdateOpeningResponse:
+  opening.UpdateOpeningResponse:
     properties:
       data:
         $ref: '#/definitions/schemas.OpeningResponse'
@@ -101,19 +101,19 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/handler.DeleteOpeningResponse'
+            $ref: '#/definitions/opening.DeleteOpeningResponse'
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
       summary: Delete opening
       tags:
       - Openings
@@ -133,15 +133,15 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/handler.ShowOpeningByIdResponse'
+            $ref: '#/definitions/opening.ShowOpeningByIdResponse'
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
       summary: Show opening
       tags:
       - Openings
@@ -155,22 +155,22 @@ paths:
         name: request
         required: true
         schema:
-          $ref: '#/definitions/handler.CreateOpeningRequest'
+          $ref: '#/definitions/opening.CreateOpeningRequest'
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/handler.CreateOpeningResponse'
+            $ref: '#/definitions/opening.CreateOpeningResponse'
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
       summary: Create opening
       tags:
       - Openings
@@ -190,19 +190,19 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/handler.UpdateOpeningResponse'
+            $ref: '#/definitions/opening.UpdateOpeningResponse'
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
         "404":
           description: Not Found
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
       summary: Update opening
       tags:
       - Openings
@@ -217,11 +217,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/handler.ListOpeningsResponse'
+            $ref: '#/definitions/opening.ListOpeningsResponse'
         "400":
           description: Bad Request
           schema:
-            $ref: '#/definitions/handler.ErrorResponse'
+            $ref: '#/definitions/opening.ErrorResponse'
       summary: List openings
       tags:
       - Openings

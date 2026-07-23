@@ -1,7 +1,8 @@
-package handler
+package opening
 
 import (
 	"fmt"
+	"goportunities/handler"
 	"goportunities/schemas"
 	"net/http"
 
@@ -22,6 +23,8 @@ import (
 // @Failure 500 {object} ErrorResponse
 // @Router /opening [delete]
 func DeleteOpeningHandler(ctx *gin.Context) {
+	db, _ := handler.InitializeHandler()
+
 	id := ctx.Query("id")
 	if id == "" {
 		sendError(ctx, http.StatusBadRequest, errParamIsRequired("id", "string").Error())

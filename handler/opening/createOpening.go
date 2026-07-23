@@ -1,6 +1,7 @@
-package handler
+package opening
 
 import (
+	"goportunities/handler"
 	"goportunities/schemas"
 	"net/http"
 
@@ -20,6 +21,9 @@ import (
 // @Failure 500 {object} ErrorResponse
 // @Router /opening [post]
 func CreateOpeningHandler(ctx *gin.Context) {
+
+	db, logger := handler.InitializeHandler()
+
 	request := CreateOpeningRequest{}
 	ctx.BindJSON(&request)
 
